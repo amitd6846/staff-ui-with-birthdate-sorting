@@ -1,0 +1,580 @@
+@font-face {
+    font-family: 'Omnes';
+    src: url(../fonts/Omnes.eot) format("embedded-opentype"), url(../fonts/Omnes.ttf) format("truetype");
+}
+body.bgClass {
+    background-image: url(../img/background.svg);
+    background-position: 0 -119px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Omnes';
+    color: #273044;
+}
+.cusTomColor {
+    background-color: #273044;
+    padding: 0;
+    margin: 0;
+     :after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: #FF4560;
+    }
+    button.navbar-toggler img {
+        width: 40px;
+        height: 40px;
+        margin: 0 0 0 auto;
+        background-color: red;
+        padding: 10px;
+        border-radius: 50px;
+        float: right;
+    }
+    ul.navbar-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        li.active {
+            background-color: #FF4560;
+            a.nav-link {
+                font-weight: 600;
+            }
+        }
+        a.nav-link {
+            color: #fff;
+            font-size: 17px;
+            line-height: 24px;
+            padding: 19px 23px 19px;
+            font-family: 'Omnes';
+            font-weight: normal;
+        }
+    }
+}
+// heading start
+.headingDiv {
+    margin: 140px auto 0;
+    h1 {
+        font-size: 55px;
+        line-height: 78px;
+        font-family: 'Omnes';
+        font-weight: 600;
+        margin: 0;
+    }
+    p {
+        font-size: 19px;
+        line-height: 27px;
+        max-width: 667px;
+        font-family: 'Omnes';
+        font-weight: 600;
+    }
+}
+.searchBox {
+    background-color: #fff;
+    box-shadow: 0px 0px 6px #00000029;
+    padding: 44px 0 47px;
+    p {
+        font-size: 21px;
+        line-height: 29px;
+        color: #273044;
+        font-weight: 600;
+        margin: 0 0 10px 0;
+    }
+    input {
+        border: 1px solid #82C5B2;
+        border-radius: 5px;
+        padding: 13px 0 13px 18px;
+        font-size: 17px;
+        color: #707070;
+        line-height: 24px;
+        width: 100%;
+    }
+    input:focus {
+        outline: none;
+    }
+    .inputDiv {
+        max-width: 339px;
+        position: relative;
+        img.searchIcon {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 17px;
+        }
+    }
+}
+.staffContainer {
+    .allStaff {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 36px 24px;
+        margin: 57px 0 175px 0;
+        .profileCard[data-tag="san"] {
+            .profileInfo {
+                .dots {
+                    span {
+                        background-color: #0CA9E0;
+                    }
+                }
+            }
+        }
+        .profileCard[data-tag="nyc"] {
+            .profileInfo {
+                .dots {
+                    span {
+                        background-color: #EC840B;
+                    }
+                }
+            }
+        }
+        .profileCard[data-tag="lond"] {
+            .profileInfo {
+                .dots {
+                    span {
+                        background-color: #82C5B2;
+                    }
+                }
+            }
+        }
+        .profileCard[data-tag="man"] {
+            .profileInfo {
+                .dots {
+                    span {
+                        background-color: #662483;
+                    }
+                }
+            }
+        }
+        .profileCard {
+            box-shadow: 0px 6px 10px 4px #0000001a;
+            background-color: #fff;
+            position: relative;
+            .proPic {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                object-fit: cover;
+                overflow: hidden;
+                position: relative;
+                img {
+                    width: 100%;
+                }
+            }
+            .profileInfo {
+                position: relative;
+                padding: 19px 0 12px 15px;
+                .dots {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 28px;
+                    height: 28px;
+                    background-color: #fff;
+                    box-shadow: 0px 3px 6px #00000029;
+                    position: absolute;
+                    top: -42px;
+                    right: 10px;
+                    border-radius: 25px;
+                    span {
+                        width: 4px;
+                        height: 4px;
+                        background-color: red;
+                        border-radius: 50px;
+                        margin: 0 1px;
+                    }
+                }
+                p.name {
+                    font-size: 21px;
+                    line-height: 29px;
+                    margin: 0;
+                    color: #273044;
+                    font-weight: 600;
+                }
+                p.jobTitle {
+                    font-size: 15px;
+                    line-height: 22px;
+                    text-transform: uppercase;
+                    font-weight: lighter;
+                    margin: 0;
+                }
+            }
+            .proPic::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                bottom: 0px;
+                left: 0;
+                //background-color: #EC840B;
+            }
+        }
+        .profileCard:nth-child(4n+1):after {
+            background: transparent linear-gradient(89deg, #0CA9E0 0%, #006CA1 100%);
+        }
+        .profileCard:nth-child(4n+1) {
+            .proPic::after {
+                background: transparent linear-gradient(89deg, #0CA9E0 0%, #006CA1 100%);
+            }
+        }
+        .profileCard:nth-child(4n+2):after {
+            content: 'NYC';
+            background: transparent linear-gradient(89deg, #EC840B 0%, #961D66 100%);
+        }
+        .profileCard:nth-child(4n+2) {
+            .proPic::after {
+                background: transparent linear-gradient(89deg, #EC840B 0%, #961D66 100%);
+            }
+        }
+        .profileCard:nth-child(4n+3):after {
+            content: 'LOND';
+            background: transparent linear-gradient(89deg, #82C5B2 0%, #CED836 100%);
+        }
+        .profileCard:nth-child(4n+3) {
+            .proPic::after {
+                background: transparent linear-gradient(89deg, #82C5B2 0%, #CED836 100%);
+            }
+        }
+        .profileCard:nth-child(4n+4):after {
+            content: 'MAN';
+            background: transparent linear-gradient(270deg, #006CA1 0%, #662483 100%);
+        }
+        .profileCard:nth-child(4n+4) {
+            .proPic::after {
+                background: transparent linear-gradient(270deg, #006CA1 0%, #662483 100%);
+            }
+        }
+        .profileCard:after {
+            content: 'SAN';
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 13px;
+            line-height: 18px;
+            padding: 8px 14px;
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+    p.staffHeading {
+        margin: 63px 0 20px 0;
+        font-size: 21px;
+        line-height: 29px;
+        font-weight: 600;
+        position: relative;
+    }
+    p.staffHeading:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #FF4560;
+    }
+}
+#staffModal {
+    .modal-dialog {
+        max-width: 1117px;
+        .modal-content {
+            border: none;
+            box-shadow: 0px 3px 30px #00000029;
+            border-radius: 0;
+        }
+        .modal-body {
+            padding: 0;
+        }
+        .modalDiv {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+        }
+        .modalDiv:after {
+            content: ""attr(data-tag)"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 14px;
+            line-height: 19px;
+            padding: 7px 17px;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .modalDiv[data-tag="san"]:after {
+            background: transparent linear-gradient(89deg, #0CA9E0 0%, #006CA1 100%);
+        }
+        .modalDiv[data-tag="nyc"]:after {
+            background: transparent linear-gradient(89deg, #EC840B 0%, #961D66 100%);
+        }
+        .modalDiv[data-tag="lond"]:after {
+            background: transparent linear-gradient(89deg, #82C5B2 0%, #CED836 100%);
+        }
+        .modalDiv[data-tag="man"]:after {
+            background: transparent linear-gradient(270deg, #006CA1 0%, #662483 100%);
+        }
+        .profileInfo {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 33px 0 11px 0;
+            width: 100%;
+            p.name {
+                font-size: 31px;
+                line-height: 43px;
+                margin: 0;
+                font-weight: 600;
+                padding: 0 0 0 72px;
+            }
+            p.jobTitle {
+                font-size: 21px;
+                line-height: 29px;
+                text-transform: uppercase;
+                margin: 0 0 10px 0;
+                padding: 0 0 0 72px;
+            }
+            p.hireDate {
+                background-color: #EC840B;
+                color: #fff;
+                padding: 0 10px;
+                font-size: 16px;
+                line-height: 26px;
+                margin: 0 0 13px 72px;
+            }
+        }
+        .disc {
+            padding: 0 0 0 72px;
+        }
+        .contactInfo {
+            display: flex;
+            display: flex;
+            padding: 20px 0 0 72px;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            width: 100%;
+            border-top: 1px #EC840B dashed;
+            border-bottom: 1px #EC840B dashed;
+            margin: 0 0 12px 0;
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 0 17px 0;
+                img {
+                    width: 23px;
+                    margin: 0 21px 0 0;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+        }
+        .birthDate {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 0 0 0 72px;
+            margin: 0 0 23px 0;
+            p {
+                margin: 0;
+                font-size: 16px;
+                line-height: 36px;
+            }
+            p.dynamic {
+                color: #EC840B;
+                font-weight: bolder;
+            }
+            img.bdayImg {
+                width: 14px;
+                margin: auto 5px auto 5px;
+            }
+        }
+        img.close {
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 23px;
+            right: 23px;
+            cursor: pointer;
+            z-index: 999;
+        }
+    }
+}
+button.navbar-toggler:focus {
+    outline: none;
+}
+@media screen and (max-width:1024px) {}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    #staffModal .modal-dialog {
+        max-width: calc(100% - 10vw);
+    }
+    #staffModal .modal-dialog .modalDiv .proPic img {
+        max-width: 300px;
+        height: 380px;
+        object-fit: cover;
+        object-position: left center;
+    }
+}
+@media screen and (max-width:991px) {}
+@media screen and (min-width:768px) and (max-width:991px) {}
+@media screen and (max-width:767px) {
+    .cusTomColor {
+        min-height: 84px;
+        div#collapsibleNavbar.show {
+            overflow-y: auto;
+            height: 100vh;
+        }
+        button.navbar-toggler {
+            margin: 0 10px 0 auto;
+            width: 37px;
+            height: 37px;
+            padding: 6px;
+            border-radius: 50px;
+            background-color: #FF4560;
+            img {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0px;
+                border-radius: 0;
+                background-color: unset;
+            }
+        }
+    }
+    .headingDiv {
+        h1 {
+            font-size: 31px;
+            line-height: 41px;
+            margin: 0 0 13px 0;
+        }
+    }
+    .staffContainer {
+        .allStaff {
+            grid-template-columns: repeat(1, 1fr);
+            .profileCard {
+                display: flex;
+                align-items: stretch;
+                justify-content: flex-start;
+                .proPic {
+                    min-width: 80px;
+                    img {
+                        width: 100%;
+                        height: 80px;
+                        object-fit: cover;
+                        object-position: center left;
+                    }
+                }
+                .proPic::after {
+                    width: 2px;
+                    height: 100%;
+                    left: unset;
+                    right: 0;
+                }
+                .profileInfo {
+                    padding: 0 0 0 14px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    width: 100%;
+                    p.name {
+                        font-size: 17px;
+                        line-height: 24px;
+                    }
+                    p.jobTitle {
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
+                    .dots {
+                        top: unset;
+                        bottom: 6px;
+                        right: 6px;
+                    }
+                }
+            }
+            .profileCard:after {
+                top: unset;
+                bottom: 0;
+                font-size: 11px;
+                line-height: 14px;
+            }
+        }
+    }
+    .headingDiv {
+        margin: 108px 0 0 0;
+    }
+    #staffModal .modal-dialog {
+        max-width: 100%;
+        align-items: flex-end;
+        .profileInfo {
+            padding: 14px 16px;
+            p.name {
+                padding: 0;
+                font-size: 23px;
+                line-height: 24px;
+                margin: 0 0 4px;
+            }
+            p.jobTitle {
+                padding: 0;
+                font-size: 17px;
+                line-height: 24px;
+            }
+            p.hireDate {
+                background-color: #fff;
+                color: #273044;
+                margin: 0;
+                padding: 0;
+                font-size: 15px;
+                line-height: 22px;
+            }
+            .birthDate {
+                display: none;
+            }
+            .contactInfo {
+                padding: 10px 0 0 0;
+                margin: 19px 0 0 0;
+                .item img {
+                    width: 14px;
+                    margin: 0 11px 0 0;
+                }
+            }
+            .disc {
+                padding: 0;
+                p {
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+            }
+        }
+        .modalDiv {
+            flex-direction: column;
+            .proPic {
+                width: 100%;
+                img {
+                    width: 100%;
+                    object-position: top center;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+.cusTomColor ul.navbar-nav a.nav-link {
+    padding: 14px 30px;
+    min-width: 200px;
+    text-align: center;
+}
+@media screen and (min-width:481px) and (max-width:767px) {}
+@media screen and (max-width:480px) {}
+@media screen and (max-width:375px) {}
+@media all and (-ms-high-contrast:none) {
+    /* IE11 */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Account Prepaid</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bgClass">
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top cusTomColor">
+            <div class="container mobile">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <img src="img/menu-icon.svg">
+                  </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Our Agency</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Our Staff</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Locations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Latest</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Upcoming</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Your Stein IAS</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </nav>
+    </header>
+    <div class="container headingDiv">
+        <h1>Staff Directory</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+    </div>
+    <div class="searchBox">
+        <div class="container">
+            <p>Filter colleagues</p>
+            <div class="inputDiv">
+                <input type="text" placeholder="search">
+                <img src="img/search.png" class="searchIcon">
+            </div>
+        </div>
+    </div>
+
+    <div class="container staffContainer">
+        <p class="staffHeading">Showing <span></span> colleague(s)</p>
+        <div class="profileCard d-none" id="cloneCard" data-toggle="modal" data-target="#staffModal">
+            <input type="hidden" value="" class="profileInfo">
+            <div class="proPic">
+                <img src="img/Profile-Picture.png">
+            </div>
+            <div class="profileInfo">
+                <p class="name"></p>
+                <p class="jobTitle"></p>
+                <div class="dots" data-toggle="modal" data-target="#staffModal">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="allStaff"></div>
+    </div>
+    <div class="modal fade" id="staffModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <img src="img/close.svg" class="close" data-dismiss="modal">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="modalDiv">
+                        <div class="proPic">
+                            <img src="img/Profile-Picture.png">
+                        </div>
+                        <div class="profileInfo">
+                            <p class="name"></p>
+                            <p class="jobTitle"></p>
+                            <p class="hireDate">Joined 1 year 2 months ago</p>
+                            <div class="birthDate">
+                                <p>Birthday :</p>
+                                <img src="img/birthday.svg" class="bdayImg">
+                                <p class="dynamic">Turning <span class="ageClass"></span> on <span class="month"></span> <span class="bday"></span></p>
+                            </div>
+                            <div class="contactInfo">
+                                <div class="item">
+                                    <img src="img/mail.svg" alt="">
+                                    <p class="emailTag"></p>
+                                </div>
+                                <div class="item">
+                                    <img src="img/call.svg" alt="">
+                                    <p class="callTag">+44 7890 123 456</p>
+                                </div>
+                            </div>
+                            <div class="disc">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
