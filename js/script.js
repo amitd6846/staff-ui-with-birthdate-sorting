@@ -2,6 +2,7 @@ $(document).ready(function() {
     var regex = /^(\d{4}[-]\d{2}[-]\d{2})/gm;
     var aftertoday = [];
     var beforeToday = [];
+    var thismonthDays = [];
     var finalSort = [];
     var today = new Date();
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -26,19 +27,30 @@ $(document).ready(function() {
                 var jsonDD = result[index].newDate.substring(10, 12);
                 var jsonYY = result[index].newDate.substring(2, 6);
                 result[index].newM = jsonMM;
-
+                result[index].finalDate = jsonMM + '-' + jsonDD + '-' + jsonYY;
+                // console.log(result[index].finalDate.substring(3, 5));
                 if (result[index].newM < mm) {
                     beforeToday.push(result[index]);
                     beforeToday.sort(function(a, b) {
                         return new Date(a.newM) - new Date(b.newM);
                     });
                 } else {
-                    aftertoday.push(result[index]);
-                    aftertoday.sort(function(a, b) {
-                        return new Date(a.newM) - new Date(b.newM);
-                    });
+                    if (result[index].finalDate.substring(0, 2) == mm && result[index].finalDate.substring(3, 5) <= (dd - 1)) {
+                        thismonthDays.push(result[index]);
+                        thismonthDays.sort(function(a, b) {
+                            return new Date(b.newM) - new Date(a.newM);
+                        });
+                        // console.log(thismonthDays);
+                    } else {
+                        aftertoday.push(result[index]);
+                        aftertoday.sort(function(a, b) {
+                            return new Date(a.newM) - new Date(b.newM);
+                        });
+                    }
                 }
                 finalSort = aftertoday.concat(beforeToday);
+                finalSort = finalSort.concat(thismonthDays);
+                console.log(finalSort);
             });
             $.each(finalSort, function(index) {
                 // cloning cards..
@@ -58,32 +70,25 @@ $(document).ready(function() {
         },
     });
     $(document).on('click', '.allStaff .profileCard', function() {
-        // fetch this.data for modal
         var getValue = $('.profileInfo', this).attr('data');
         var getTag = $(this).attr('data-tag');
         $('#staffModal').find('.modalDiv').removeAttr('data-tag');
         $('#staffModal').find('.modalDiv').attr('data-tag', getTag);
-        // console.log(getTag)
         var obj = JSON.parse(getValue);
         var test = obj.newDate.replace(/\-/g, '/');
         var date = new Date(obj.birthday);
         var dob = new Date(date);
-        //calculate month difference from current date in time  
         var month_diff = Date.now() - dob.getTime();
-        //convert the calculated difference in date format  
         var age_dt = new Date(month_diff);
-        //extract year from date      
         var year = age_dt.getUTCFullYear();
-        //now calculate the age of the user  
         var age = Math.abs(year - 1970);
-        //display the calculated age  
-        console.log("Age of the date entered: " + age + " years");
+        // fetch this.data for modal
         $('#staffModal').find('.profileInfo .name').text(obj.name);
         $('#staffModal').find('.profileInfo .jobTitle').text(obj.jobTitle);
         $('#staffModal').find('.profileInfo .emailTag').text(obj.email);
         $('#staffModal').find('.profileInfo .dynamic .ageClass').text(age);
         $('#staffModal').find('.profileInfo .dynamic .month').text(monthNames[date.getMonth()]);
-        $('#staffModal').find('.profileInfo .dynamic .bday').text(date.getDate());
+        $('#staffModal').find('.profileInfo .dynamic .bday').text(obj.finalDate.substring(3, 5));
         $('#staffModal').find('.profileInfo .callTag').text(obj.mobile);
         $('#staffModal').find('.profileInfo .disc p').text(obj.jobDescription);
     });
